@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Deepak Ahlawat's Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href= "{{ url_for('static', filename='assets/css/main.css')}}"/>
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css')}}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-fa-rocket"><i class="fa fa-rocket" style="font-size:40px"; aria-hidden="true"></i>
+</span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>International Space Station Locator</h1>
+								<p> Real Time Data on ISS and Astronauts on It.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">number</a></li>
+								<li><a href="#work">names</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#contact">Contact</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">TOTAL:{{c}}</h2>
+								<span class="image main"><img src="{{ url_for('static', filename='images/pic01.jfif')}}" alt="" /></span>
+								<p>The Total Number of Astronauts on ISS right now is
+                                   {{c}}. The ISS has been visited by astronauts, cosmonauts and space tourists from 18 different nations. As of 14 March 2019, 236 people from 18 countries had visited the space station, many of them multiple times. The United States sent 149 people, Russia sent 47, nine were Japanese, eight were Canadian, five were Italian, four were French, three were German, and there were one each from Belgium, Brazil, Denmark, Kazakhstan, Malaysia, the Netherlands, South Africa, South Korea, Spain, Sweden, and the United Kingdom.
+                          
+                                    </p>
+							</article>
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">Names</h2>
+								<span class="image main"><img src="{{ url_for('static', filename='images/pic02.jfif')}}" alt="" /></span>
+								<p>These are the Names of the Astronauts on ISS right now:
+									{% for n in new1 %} 
+                                 <option style="color:#4d94ff" value={{n}} >{{n}}</option>
+                                  {% endfor %}</p>
+								<p>A typical day for the crew begins with a wake-up at 06:00, followed by post-sleep activities and a morning inspection of the station. The crew then eats breakfast and takes part in a daily planning conference with Mission Control before starting work at around 08:10. The first scheduled exercise of the day follows, after which the crew continues work until 13:05. Following a one-hour lunch break, the afternoon consists of more exercise and work before the crew carries out its pre-sleep activities beginning at 19:30, including dinner and a crew conference. The scheduled sleep period begins at 21:30. In general, the crew works ten hours per day on a weekday, and five hours on Saturdays, with the rest of the time their own for relaxation or work catch-up.</p>
+							</article>
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">About</h2>
+								<span class="image main"><img src="{{ url_for('static', filename='images/pic03.jfif')}}" alt="" /></span>
+								<p>The International Space Station (ISS) is a space station (habitable artificial satellite) in low Earth orbit. The ISS programme is a joint project between five participating space agencies: NASA (United States), Roscosmos (Russia), JAXA (Japan), ESA (Europe), and CSA (Canada).[7][8] The ownership and use of the space station is established by intergovernmental treaties and agreements.</p>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon"><i class="fa fa-envelope" aria-hidden="true"></i><span class="label">gmail</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+							
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<h4 class="copyright">&copy; Deepak Ahlawat</h4></p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
+
+	</body>
+</html>
